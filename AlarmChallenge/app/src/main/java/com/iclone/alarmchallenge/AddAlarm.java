@@ -29,7 +29,7 @@ public class AddAlarm extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        getSupportActionBar().setTitle("Alarm");
+       // getSupportActionBar().setTitle("Alarm");
         String[] day = new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
         listView = (ListView) findViewById(R.id.list_view);
         List<CustomLV> customLVs = new ArrayList<CustomLV>();
