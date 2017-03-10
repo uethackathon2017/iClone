@@ -11,8 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +38,24 @@ public class AddAlarm extends AppCompatActivity {
             temp.textDay = day[i];
             customLVs.add(temp);
         }
-
         CustomAdapter customAdapter = new CustomAdapter(this, R.layout.custom_layout_listview, customLVs);
         listView.deferNotifyDataSetChanged();
         listView.setAdapter(customAdapter);
+        final String str = "abc";
+        for (int i = 0; i < listView.getChildCount(); i++) {
+            View view = listView.getChildAt(i);
+            TextView v = (TextView) view.findViewById(R.id.day_text);
+            CheckBox box = (CheckBox) view.findViewById(R.id.checkbox);
+            box.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        
+                    }
+                }
+            });
+        }
+
     }
 
     @Override
