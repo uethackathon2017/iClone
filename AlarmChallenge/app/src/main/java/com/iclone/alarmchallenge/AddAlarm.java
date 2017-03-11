@@ -29,8 +29,6 @@ public class AddAlarm extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setTitle("Alarm");
-        } else {
-            Toast.makeText(this,"false",Toast.LENGTH_SHORT);
         }
 
         String[] day = new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
@@ -52,7 +50,7 @@ public class AddAlarm extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if (b) {
-                        
+
                     }
                 }
             });
