@@ -29,6 +29,8 @@ public class AddAlarm extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setTitle("Alarm");
+        } else {
+            Toast.makeText(this,"false",Toast.LENGTH_SHORT);
         }
 
         String[] day = new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
@@ -42,7 +44,6 @@ public class AddAlarm extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter(this, R.layout.custom_layout_listview, customLVs);
         listView.deferNotifyDataSetChanged();
         listView.setAdapter(customAdapter);
-        final String str = "abc";
         for (int i = 0; i < listView.getChildCount(); i++) {
             View view = listView.getChildAt(i);
             TextView v = (TextView) view.findViewById(R.id.day_text);

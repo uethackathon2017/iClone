@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddAlarm" />
-        <activity android:name=".MathActivity"></activity>
+        <activity android:name=".MathActivity" />
     </application>
 
 </manifest>

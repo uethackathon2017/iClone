@@ -2,12 +2,14 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.iclone.alarmchallenge.AddAlarm"
-    android:weightSum="1">
-
+    android:orientation="vertical"
+    android:id="@+id/ln_layout">
+    <include layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
