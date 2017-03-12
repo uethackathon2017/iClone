@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AlarmChallenge.iml" filepath="$PROJECT_DIR$/AlarmChallenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlarmOn-recyclerview.iml" filepath="$PROJECT_DIR$/AlarmOn-recyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>
   </component>
 </project>

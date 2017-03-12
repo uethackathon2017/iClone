@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.daimajia.swipe.SwipeLayout xmlns:swipe="http://schemas.android.com/apk/res-auto"
+        android:id="@id/swipe"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        swipe:leftEdgeSwipeOffset="0.0dip"
+        swipe:rightEdgeSwipeOffset="0.0dip">
+
+        <LinearLayout
+            android:id="@id/alarm_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="8.0dip"
+            android:background="@drawable/card_to_left"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingEnd="20.0dip"
+            android:paddingStart="20.0dip"
+            android:tag="Bottom3">
+
+            <LinearLayout
+                android:id="@id/swipe_options_game_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_game_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_game" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_game"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_game"
+                    android:layout_width="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/swipe_options_difficulty_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_difficulty_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_difficulty" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_difficulty"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_difficulty" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/swipe_options_label_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_label_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_label"
+                    android:src="@drawable/ic_local_offer_24dp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_label"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_label" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/swipe_options_repeat_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_repeat_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_repeat"
+                    android:src="@drawable/ic_today_white_36dp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_repeat"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_repeat" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/swipe_options_ringtone_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_ringtone_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_ringtone"
+                    android:src="@drawable/ic_ringtone" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_ringtone"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_ringtone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/swipe_options_vibrate_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_vibrate_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_vibrate"
+                    android:src="@drawable/ic_vibration_white_36dp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_vibrate"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_vibrate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/swipe_options_delete_layout"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:id="@id/swipe_options_delete_icon"
+                    android:layout_width="@dimen/text_view_options_drawable_width"
+                    android:layout_height="@dimen/text_view_options_drawable_height"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/options_delete"
+                    android:src="@drawable/ic_delete_normal" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@id/swipe_options_delete"
+                    style="@style/SwipeOptionsTextView"
+                    android:gravity="center"
+                    android:text="@string/options_delete" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@id/alarm_foreground"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/card_to_right"
+            android:orientation="horizontal"
+            android:paddingEnd="16.0dip"
+            android:paddingStart="26.0dip">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_alarm_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <TextView
+                        android:id="@+id/textView_alarm_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginEnd="18.0dip"
+                    android:layout_marginStart="18.0dip"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@id/alarm_game_icon"
+                        android:layout_width="20.0dip"
+                        android:layout_height="20.0dip"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/options_game"
+                        android:src="@drawable/ic_math_large" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@id/label_text"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:ellipsize="end"
+                    android:gravity="end|center"
+                    android:maxLines="1"
+                    android:paddingEnd="8.0dip"
+                    android:paddingStart="8.0dip"
+                    android:textColor="@color/primaryForeground" />
+
+                <CheckBox
+                    android:id="@id/on_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/checkbox_enable"
+                    android:focusable="false"
+                    android:gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </com.daimajia.swipe.SwipeLayout>
+</LinearLayout>

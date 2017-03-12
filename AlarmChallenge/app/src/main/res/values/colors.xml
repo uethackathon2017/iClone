@@ -1,5 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <item name="white" type="color">#ffffff</item>
+  <item name="teal" type="color">#26a69a</item>
+  <item name="red" type="color">#ef5350</item>
+  <item name="pink" type="color">#f06292</item>
+  <item name="purple" type="color">#ba68c8</item>
+  <item name="deep_purple" type="color">#9575cd</item>
+  <item name="indigo" type="color">#7986cb</item>
+  <item name="blue" type="color">#1e88e5</item>
+  <item name="light_blue" type="color">#039be5</item>
+  <item name="cyan" type="color">#00acc1</item>
+  <item name="green" type="color">#43a047</item>
+  <item name="light_green" type="color">#689f38</item>
+  <item name="orange" type="color">#f57c00</item>
+  <item name="deep_orange" type="color">#ff5722</item>
+  <item name="brown" type="color">#a1887f</item>
+  <item name="grey" type="color">#757575</item>
+  <item name="blue_grey" type="color">#78909c</item>
+  <item name="notification_color" type="color">#1e88e5</item>
+  <item name="card_view_black" type="color">#292929</item>
+  <item name="card_view_white" type="color">#ffffff</item>
+  <color name="alarm_timeline_color">#ff4d4d4d</color>
+    <color name="black">#ff000000</color>
+    <color name="black_less_trans">#44000000</color>
+    <color name="black_more_trans">#0c000000</color>
+    <color name="black_trans">#11000000</color>
+    <color name="blackish">#ff888888</color>
+    <color name="card_background">#ffffffff</color>
+    <color name="card_shadow_1">#ffd4d4d4</color>
+    <color name="card_shadow_2">#ffdddddd</color>
+    <color name="clock_gray">#80ffffff</color>
+    <color name="com_facebook_blue">#ff3b5998</color>
+    <color name="com_facebook_button_background_color">#ff415dae</color>
+    <color name="com_facebook_button_background_color_disabled">#ffbdc1c9</color>
+    <color name="com_facebook_button_background_color_pressed">#ff2f477a</color>
+    <color name="com_facebook_button_like_background_color_selected">#ff7c8fc8</color>
+    <color name="com_facebook_button_login_silver_background_color">#fff4f6f8</color>
+    <color name="com_facebook_button_login_silver_background_color_pressed">#ffe9eaf0</color>
+    <color name="com_facebook_button_send_background_color">#ff0084ff</color>
+    <color name="com_facebook_button_send_background_color_pressed">#ff006fff</color>
+    <color name="com_facebook_likeboxcountview_border_color">#ff6a7180</color>
+    <color name="com_facebook_likeboxcountview_text_color">#ff6a7180</color>
+    <color name="com_facebook_likeview_text_color">#ff6a7180</color>
+    <color name="com_facebook_share_button_text_color">#ffffffff</color>
+    <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#1f000000</color>
+    <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
+    <color name="common_google_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <color name="common_google_signin_btn_text_light_disabled">#1f000000</color>
+    <color name="common_google_signin_btn_text_light_focused">#90000000</color>
+    <color name="common_google_signin_btn_text_light_pressed">#de000000</color>
+    <color name="correct_green">#ff00ee00</color>
+    <color name="defaultCustomColor">#ff306090</color>
+    <color name="defaultCustomColorDarker">#ff264d73</color>
+    <color name="main_button_normal">@color/secondary_background</color>
+    <color name="main_button_selected">@color/secondary_background_trans</color>
+    <color name="md_btn_highlighted">#88969696</color>
+    <color name="md_btn_selected">#33969696</color>
+    <color name="md_btn_selected_dark">#40cbcbcb</color>
+    <color name="md_divider_black">#10000000</color>
+    <color name="md_divider_white">#10ffffff</color>
+    <color name="md_edittext_error">#ffdd2c00</color>
+    <color name="md_material_blue_600">#ff2196f3</color>
+    <color name="md_material_blue_800">#ff1565c0</color>
+    <color name="mdtp_accent_color">#ff009688</color>
+    <color name="mdtp_accent_color_dark">#ff00796b</color>
+    <color name="mdtp_accent_color_focused">#76ffffff</color>
+    <color name="mdtp_ampm_text_color">@color/mdtp_numbers_text_color</color>
+    <color name="mdtp_background_color">@color/mdtp_white</color>
+    <color name="mdtp_button_color">@color/mdtp_accent_color</color>
+    <color name="mdtp_button_selected">#33969696</color>
+    <color name="mdtp_calendar_header">@color/mdtp_accent_color_dark</color>
+    <color name="mdtp_calendar_selected_date_text">#ffd1d2d4</color>
+    <color name="mdtp_circle_background">@color/mdtp_background_color</color>
+    <color name="mdtp_circle_background_dark_theme">#ff525252</color>
+    <color name="mdtp_circle_color">#fff5f5f5</color>
+    <color name="mdtp_dark_gray">#ff323232</color>
+    <color name="mdtp_date_picker_month_day">#ff767676</color>
+    <color name="mdtp_date_picker_month_day_dark_theme">#ffb4b4b4</color>
+    <color name="mdtp_date_picker_text_disabled">#ffcccccc</color>
+    <color name="mdtp_date_picker_text_disabled_dark_theme">#ff767676</color>
+    <color name="mdtp_date_picker_text_highlighted">@color/mdtp_date_picker_text_normal</color>
+    <color name="mdtp_date_picker_text_highlighted_dark_theme">@color/mdtp_date_picker_text_normal_dark_theme</color>
+    <color name="mdtp_date_picker_text_normal">#ff212121</color>
+    <color name="mdtp_date_picker_text_normal_dark_theme">@color/mdtp_white</color>
+    <color name="mdtp_date_picker_view_animator">@android:color/white</color>
+    <color name="mdtp_date_picker_view_animator_dark_theme">@color/mdtp_light_gray</color>
+    <color name="mdtp_done_disabled_dark">#ffbfbfbf</color>
+    <color name="mdtp_done_text_color_dark_disabled">#ff888888</color>
+    <color name="mdtp_done_text_color_dark_normal">#ffffffff</color>
+    <color name="mdtp_done_text_color_disabled">#ffcccccc</color>
+    <color name="mdtp_done_text_color_normal">#ff212121</color>
+    <color name="mdtp_light_gray">#ff424242</color>
+    <color name="mdtp_line_background">#ffcccccc</color>
+    <color name="mdtp_line_dark">#ff808080</color>
+    <color name="mdtp_neutral_pressed">#33999999</color>
+    <color name="mdtp_numbers_text_color">#ff212121</color>
+    <color name="mdtp_red">@color/mdtp_accent_color</color>
+    <color name="mdtp_red_focused">@color/mdtp_accent_color_dark</color>
+    <color name="mdtp_transparent_black">#7f000000</color>
+    <color name="mdtp_white">#ffffffff</color>
+    <color name="nice_red">#ffbb3334</color>
+    <color name="primaryBackground">#ffe2e2e2</color>
+    <color name="primaryForeground">#cc334343</color>
+    <color name="primaryForeground_less_trans">#99334343</color>
+    <color name="primaryForeground_trans">#11334343</color>
+    <color name="primary_background">#ff009999</color>
+    <color name="primary_background_darker">#ff006b6b</color>
+    <color name="primary_background_trans">#cc009999</color>
+    <color name="primary_foreground">#ffffffff</color>
+    <color name="primary_foreground_lesstrans">#aaffffff</color>
+    <color name="primary_foreground_trans">#66ffffff</color>
+    <color name="secondary_background">#ffccb915</color>
+    <color name="secondary_background_trans">#aaccb915</color>
+    <color name="secondary_foreground">#66ffffff</color>
+    <color name="share_background">#ff3c5a99</color>
+    <color name="share_background_trans">#aa3c5a99</color>
+    <color name="transparent">#00000000</color>
+    <color name="tutorial_alarm_list_expanded">#ff2b8279</color>
+    <color name="tutorial_asteroids_background">#ff060030</color>
+    <color name="tutorial_colors">#ffbb3334</color>
+    <color name="tutorial_features">#ff666699</color>
+    <color name="viewfinder_border">#ffafed44</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <color name="viewfinder_mask">#60000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>

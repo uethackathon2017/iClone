@@ -1,12 +1,17 @@
-package com.iclone.alarmchallenge;
+package com.iClone.AlarmChallenge;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -16,41 +21,92 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class MathActivity extends AppCompatActivity {
-
+    public int level;
     public int counter = 0;
     public int result = 0;
     ArrayList<Button> buttons = new ArrayList<Button>();
     TextView questionText;
     TextView answerText;
-    HashMap<Integer, String> hashMap;
+    TextView textProcess;
+
+    public static final String TIMEOUT_COMMAND = "timeout";
+
+    public static final int TIMEOUT = 0;
+
+    private NotificationServiceBinder notifyService;
+    private DbAccessor db;
+    private Handler handler;
+    private Runnable timeTick;
+
+    
+    int snoozeMinutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sharedPref = PreferenceManager.
+                getDefaultSharedPreferences(getBaseContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        }
+        level = 0; 
         questionText = (TextView) findViewById(R.id.math_text);
         answerText = (TextView) findViewById(R.id.result_text);
-        hashMap = new HashMap<Integer, String>();
-        hashMap.put(0,"+");
-        hashMap.put(1,"-");
-        hashMap.put(2,"x");
-        hashMap.put(3,"/");
+        textProcess = (TextView) findViewById(R.id.tv_math_process);
         buttons.clear();
         setButtons();
-        createOperator();
+        createOperator(level);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+
+        db = new DbAccessor(getApplicationContext());
+
+        
+        notifyService = new NotificationServiceBinder(getApplicationContext());
+
+        notifyService.bind();
+
+        
+        handler = new Handler();
+
+        timeTick = new Runnable() {
+            @Override
+            public void run() {
+                notifyService.call(new NotificationServiceBinder.
+                        ServiceCallback() {
+                    @Override
+                    public void run(NotificationServiceInterface service) {
+                        try {
+                            TextView volume = (TextView)
+                                    findViewById(R.id.volume);
+
+                            String volumeText = "Volume: " + service.volume();
+
+                            volume.setText(volumeText);
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+
+                        long next = AlarmUtil.millisTillNextInterval(
+                                AlarmUtil.Interval.SECOND);
+
+                        handler.postDelayed(timeTick, next);
+                    }
+                });
+            }
+        };
+        final Button snoozeButton = (Button) findViewById(R.id.sleep_button_math);
+        snoozeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                notifyService.acknowledgeCurrentNotification(snoozeMinutes);
+
+                finish();
+            }
+        });
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
+    public void onBackPressed() {
+
     }
 
     public void setButtons() {
@@ -84,14 +140,42 @@ public class MathActivity extends AppCompatActivity {
                     String s1 = answerText.getText().toString();
                     String s2 = result+"";
                     if (s1.equals(s2)) {
+                        answerText.setTextColor(Color.GREEN);
                         if (counter >= 2) {
-                            Intent intent = new Intent(MathActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            notifyService.acknowledgeCurrentNotification(0);
+                            finish();
                         } else {
-                            createOperator();
-                            answerText.setText("");
+                            new CountDownTimer(1000,1) {
+                                @Override
+                                public void onTick(long l) {
+
+                                }
+
+                                @Override
+                                public void onFinish() {
+                                    answerText.setTextColor(Color.WHITE);
+                                    createOperator(level);
+                                    answerText.setText("");
+                                }
+                            }.start();
                         }
+                        textProcess.setText((counter+1)+"/3");
                         counter += 1;
+                    } else {
+                        if (s1.length() == s2.length()) {
+                            answerText.setTextColor(Color.RED);
+                            new CountDownTimer(1000,1) {
+                                @Override
+                                public void onTick(long l) {
+
+                                }
+
+                                @Override
+                                public void onFinish() {
+                                    answerText.setTextColor(Color.WHITE);
+                                }
+                            }.start();
+                        }
                     }
                 }
             });
@@ -109,38 +193,23 @@ public class MathActivity extends AppCompatActivity {
         });
     }
 
-    public void createOperator() {
+    public void createOperator(int level) {
+        int first;
+        int second;
+        int third;
         Random rd = new Random();
-        int first = rd.nextInt(100);
-        int second = rd.nextInt(100);
-        int operator = rd.nextInt(4);
-        switch (operator) {
-            case 0: {
-                result = first + second;
-                break;
-            }
-            case 1: {
-                if (first < second) {
-                    int temp = first;
-                    first = second;
-                    second = temp;
-                }
-                result = first - second;
-                break;
-            }
-            case 2: {
-                result = first*second;
-                break;
-            }
-            case 3: {
-                while (first%second != 0) {
-                    first = rd.nextInt(100);
-                    second = rd.nextInt(100);
-                }
-                result = first/second;
-                break;
-            }
+        int r = 1;
+        if (level == 0) {
+            r = 9;
+        } else if (level == 1) {
+            r = 29;
+        } else {
+            r = 99;
         }
-        questionText.setText(first+hashMap.get(operator)+second);
+        first = rd.nextInt(r)+1;
+        second = rd.nextInt(r)+1;
+        third = rd.nextInt(8) + 2;
+        result = (first + second)*third;
+        questionText.setText("(" + first + " + " + second + ")" + " x " + third);
     }
 }

@@ -4,7 +4,7 @@
     android:id="@+id/activity_math"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iclone.alarmchallenge.RewriteWord">
+    tools:context="io.github.carlorodriguez.alarmon.RewriteWord">
 
     <RelativeLayout
         android:paddingTop="30dp"
@@ -48,6 +48,17 @@
             android:id="@+id/answer_text"
             android:layout_below="@+id/rewrite_text"
             android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="1/3"
+            android:id="@+id/textView_process"
+            android:textColor="#ffffff"
+            android:layout_alignBaseline="@+id/rewrite_text"
+            android:layout_alignBottom="@+id/rewrite_text"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <RelativeLayout

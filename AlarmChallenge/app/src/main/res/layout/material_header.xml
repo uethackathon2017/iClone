@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@id/header_layout" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/header_title_margin_top" android:layout_marginBottom="@dimen/header_title_margin_bottom" android:layout_marginStart="@dimen/md_margin_horizontal" android:layout_marginEnd="@dimen/md_margin_horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/header_title_text_size" android:textColor="@android:color/black" android:id="@id/headerTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_alignParentStart="true" />
+    <ImageButton android:id="@id/difficultyDropDown" android:padding="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_diff_easy" android:layout_alignParentEnd="true" style="?android:attr/actionOverflowButtonStyle" />
+</RelativeLayout>
